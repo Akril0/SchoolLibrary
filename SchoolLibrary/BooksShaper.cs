@@ -9,27 +9,41 @@ namespace SchoolLibrary
     //Класс для сбору книжок
     internal class BooksShaper
     {
-        //Поле книжки для  молодшої школи
-        private string[] primaryBoock ={ "Математика", "Природознавство", "Українська мова та література" };
-        //Поле книжки для середньої школи
-        private string[] secondaryBoock = { "Алгебра","Геометрія" , "Географія", "Українська мова", "Украинська Література" };
-        //поле книжки для старшої школи 
-        private string[] highBoock = { "Тригонометрія", "Стереометрія", "Фізика", "Хімія" ,"Українська мова", "Украинська Література" };
+        public enum BookType
+        {
+            Math,
+            Natural,
+            Language
+        }
 
         //Метод сбору книжок
-        public string[] ShapBook(SchoolE school)
+        public static Dictionary<BookType, string[]> ShapBook(SchoolE school)
         {
-            switch(school)
+            Dictionary<BookType, string[]> setOfBoocks = new Dictionary<BookType, string[]>();
+            switch (school)
             {
                 case SchoolE.HighSchool:
-                    //Повертаємо список книжок для старшої школи
-                    return highBoock;
+                    //Повертаємо список книжок для старшої школи'
+                   
+                    setOfBoocks[BookType.Natural] = new string[] { "Фiзика", "Хiмiя" };
+                    setOfBoocks[BookType.Language] = new string[] { "Українська мова", "Украинська Лiтература" };
+                    setOfBoocks[BookType.Math] = new string[] { "Тригонометрiя", "Стереометрiя" };
+                    return setOfBoocks;
+           
                 case SchoolE.PrimarySchool:
                     //Повертаємо список книжок для молодшої школи
-                    return primaryBoock;
+                    setOfBoocks[BookType.Natural] = new string[] { "Природознавство" };
+                    setOfBoocks[BookType.Language] = new string[] { "Українська мова та література" };
+                    setOfBoocks[BookType.Math] = new string[] { "Математика" };
+                    return setOfBoocks;
+
                 case SchoolE.SecondarySchool:
                     //Повертаємо список книжок для середньої школи
-                    return secondaryBoock;
+                    setOfBoocks[BookType.Natural] = new string[] { "Географія" };
+                    setOfBoocks[BookType.Language] = new string[] { "Українська мова", "Украинська Література" };
+                    setOfBoocks[BookType.Math] = new string[] { "Алгебра", "Геометрія" };
+                    return setOfBoocks;
+
                 default:
                     //Повертаємо null якщо не віповідає іншим умовам
                     return null;

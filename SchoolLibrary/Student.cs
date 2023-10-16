@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static SchoolLibrary.BooksShaper;
 
 namespace SchoolLibrary
 {
@@ -12,19 +13,18 @@ namespace SchoolLibrary
         //поле рівень школи
         private SchoolE school;
         //поле список книжок
-        private string[] books;
+        private Dictionary<BookType, string[]> books;
         //поле сбірник книжок
-        BooksShaper boocksShaper = new BooksShaper();
 
         //Конструктор
         public Student(SchoolE school)
         {
             this.school = school;
-            this.books = boocksShaper.ShapBook(school);
+            this.books = BooksShaper.ShapBook(school);
         }
 
         //Властивість доступу до поля класу 
-        public string[] Books
+        public Dictionary<BookType, string[]> Books
         {
             get 
             {
@@ -44,6 +44,34 @@ namespace SchoolLibrary
                 school = value; 
             } 
         }
+
+        //Метод, який повертає список всіх книжок учня
+        public List<string> GetBooksList(){
+            List<string> list = new List<string>();
+
+            foreach (string[] books in books.Values)
+            {
+                foreach (string book in books)
+                {
+                    list.Add(book);
+                }
+            }
+            return list;
+        }
+
+        //Метод, який повертає список книжок учня конкретного типу
+        public List<string> GetBooksList(BookType bookType)
+        {
+            List<string> list = new List<string>();
+
+            foreach (string book in books[bookType])
+            {
+                list.Add(book);
+            }
+            
+            return list;
+        }
+
 
     }
 }
