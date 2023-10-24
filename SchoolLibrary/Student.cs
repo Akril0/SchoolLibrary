@@ -17,10 +17,25 @@ namespace SchoolLibrary
         //поле сбірник книжок
 
         //Конструктор
+        public Student()
+        {
+        }
+        //Конструктор з параметрами
         public Student(SchoolE school)
         {
             this.school = school;
             this.books = BooksShaper.ShapBook(school);
+        }
+        //Конструктор копіюючий інший об'єкт
+        public Student(Student student)
+        {
+            this.school = student.School;
+            this.books = student.Books;
+        }
+        //Десткутор
+        ~Student()
+        {
+            Console.WriteLine("OBJ is deleted");
         }
 
         //Властивість доступу до поля класу 
