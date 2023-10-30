@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using static SchoolLibrary.BooksShaper;
@@ -14,12 +15,14 @@ namespace SchoolLibrary
         private SchoolE school;
         //поле список книжок
         private Dictionary<BookType, string[]> books;
-        //поле сбірник книжок
+        
+            
 
         //Конструктор
         public Student()
         {
         }
+
         //Конструктор з параметрами
         public Student(SchoolE school)
         {
@@ -75,6 +78,7 @@ namespace SchoolLibrary
         }
 
         //Метод, який повертає список книжок учня конкретного типу
+
         public List<string> GetBooksList(BookType bookType)
         {
             List<string> list = new List<string>();

@@ -32,18 +32,18 @@ namespace SchoolLibrary
             Console.WriteLine("\n=========================================================\n");
 
             //Створюємо студента
-            Student student2 = new Student(student1);
+            Teacher teacher = new Teacher(BookType.Math);
             //Виводимо список його книжок
-            Console.WriteLine("Студен номер 2");
+            Console.WriteLine("Вчитель");
             Console.WriteLine("Список всiх книжок: ");
             //Виводимо список всіх його книжок
-            foreach (string book in student2.GetBooksList())
+            foreach (string book in teacher.GetBooksList())
             {
                 Console.WriteLine(book);
             }
             Console.WriteLine("\nСписок мат. книжок: ");
             //Виводимо список його математичних книжок
-            foreach (string book in student2.GetBooksList(BookType.Math))
+            foreach (string book in teacher.GetBooksList(SchoolE.PrimarySchool))
             {
                 Console.WriteLine(book);
             }
