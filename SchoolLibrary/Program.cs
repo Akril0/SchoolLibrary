@@ -32,7 +32,7 @@ namespace SchoolLibrary
             Console.WriteLine("\n=========================================================\n");
 
             //Створюємо студента
-            Student student2 = new Student(SchoolE.HighSchool);
+            Student student2 = new Student(student1);
             //Виводимо список його книжок
             Console.WriteLine("Студен номер 2");
             Console.WriteLine("Список всiх книжок: ");
@@ -47,6 +47,8 @@ namespace SchoolLibrary
             {
                 Console.WriteLine(book);
             }
+
+            
 
         }
 

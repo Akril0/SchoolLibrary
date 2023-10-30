@@ -16,6 +16,9 @@ namespace SchoolLibrary
             Language
         }
 
+
+
+
         //Метод сбору книжок
         public static Dictionary<BookType, string[]> ShapBook(SchoolE school)
         {
@@ -49,6 +52,9 @@ namespace SchoolLibrary
                     return null;
             }
         }
+
+
+
         
     }
 }
