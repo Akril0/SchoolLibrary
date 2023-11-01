@@ -14,7 +14,7 @@ namespace SchoolLibrary
         //поле рівень школи
         private SchoolE school;
         //поле список книжок
-        private Dictionary<BookType, string[]> books;
+        private Dictionary<BookType, Book[]> books;
         
             
 
@@ -42,7 +42,7 @@ namespace SchoolLibrary
         }
 
         //Властивість доступу до поля класу 
-        public Dictionary<BookType, string[]> Books
+        public Dictionary<BookType, Book[]> Books
         {
             get 
             {
@@ -64,12 +64,12 @@ namespace SchoolLibrary
         }
 
         //Метод, який повертає список всіх книжок учня
-        public List<string> GetBooksList(){
-            List<string> list = new List<string>();
+        public List<Book> GetBooksList(){
+            List<Book> list = new List<Book>();
 
-            foreach (string[] books in books.Values)
+            foreach (Book[] books in books.Values)
             {
-                foreach (string book in books)
+                foreach (Book book in books)
                 {
                     list.Add(book);
                 }
@@ -79,11 +79,11 @@ namespace SchoolLibrary
 
         //Метод, який повертає список книжок учня конкретного типу
 
-        public List<string> GetBooksList(BookType bookType)
+        public List<Book> GetBooksList(BookType bookType)
         {
-            List<string> list = new List<string>();
+            List<Book> list = new List<Book>();
 
-            foreach (string book in books[bookType])
+            foreach (Book book in books[bookType])
             {
                 list.Add(book);
             }

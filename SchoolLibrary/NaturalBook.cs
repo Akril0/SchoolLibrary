@@ -8,8 +8,8 @@ namespace SchoolLibrary
 {
     public class NaturalBook : Book
     {
-        public NaturalBook(string title, string author, int pages)
-            : base(title, author, pages) { }
+        public NaturalBook(string title)
+            : base(title) { }
 
         public override void DisplayInfo()
         {

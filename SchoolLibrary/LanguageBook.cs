@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SchoolLibrary
 {
-    public class MathBook : Book
+    public class LanguageBook : Book
     {
-        public MathBook(string title)
+        public LanguageBook(string title)
             : base(title) { }
 
         public override void DisplayInfo()
         {
-            Console.WriteLine("Математична книга:");
+            Console.WriteLine("Мовна книга:");
             base.DisplayInfo();
         }
     }
