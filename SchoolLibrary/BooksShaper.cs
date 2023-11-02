@@ -8,32 +8,27 @@ using static SchoolLibrary.BooksShaper;
 namespace SchoolLibrary
 {
     //Класс для сбору книжок
-    internal class BooksShaper
+    class BooksShaper
     {
-        public enum BookType
-        {
-            Math,
-            Natural,
-            Language
-        }
+     
 
         private static Dictionary<BookType, Book[]> setOfHighBoocks = new Dictionary<BookType, Book[]>()
         {
-            { BookType.Natural, new Book[] { new NaturalBook("Фізика"), new NaturalBook("Хімія") } },
-            { BookType.Language, new Book[] { new LanguageBook( "Українська мова"),new LanguageBook( "Украинська Лiтература") } },
-            { BookType.Math, new Book[] { new MathBook("Тригонометрiя"), new MathBook("Стереометрiя") } }
+            { BookType.Natural, new Book[] { new NaturalBook("Фізика", "Автор"), new NaturalBook("Хімія", "Автор") } },
+            { BookType.Language, new Book[] { new LanguageBook("Українська мова", "Автор"), new LanguageBook( "Украинська Лiтература", "Автор") } },
+            { BookType.Math, new Book[] {new MathBook("Тригонометрiя", "Автор"), new MathBook("Стереометрiя", "Автор") } }
         };
         private static Dictionary<BookType, Book[]> setOfPrimaryBoocks = new Dictionary<BookType, Book[]>()
         {
-            { BookType.Natural, new Book[] { new NaturalBook("Природознавство") } },
-            { BookType.Language, new Book[] { new LanguageBook("Українська мова та література") } },
-            { BookType.Math, new Book[] {   new MathBook("Математика") } }
+            { BookType.Natural, new Book[] { new NaturalBook("Природознавство", "Автор") } },
+            { BookType.Language, new Book[] { new LanguageBook("Українська мова та література", "Автор") } },
+            { BookType.Math, new Book[] {   new MathBook("Математика", "Автор") } }
         };
         private static Dictionary<BookType, Book[]> setOfSecondaryBoocks = new Dictionary<BookType, Book[]>()
         {
-            { BookType.Natural, new Book[] { new NaturalBook("Географія") } },
-            { BookType.Language, new Book[] { new LanguageBook("Українська мова"),  new LanguageBook("Украинська Література") } },
-            { BookType.Math, new Book[] { new MathBook("Алгебра"), new MathBook("Геометрія") } }
+            { BookType.Natural, new Book[] { new NaturalBook("Географія", "Автор") } },
+            { BookType.Language, new Book[] {new LanguageBook("Українська мова", "Автор"), new LanguageBook("Украинська Література", "Автор") } },
+            { BookType.Math, new Book[] {new MathBook("Алгебра", "Автор"), new MathBook("Геометрія", "Автор") } }
         };
 
         //Метод сбору книжок
@@ -44,8 +39,6 @@ namespace SchoolLibrary
             {
                 case SchoolE.HighSchool:
                     //Повертаємо список книжок для старшої школи'
-                   
-
                     return setOfHighBoocks;
            
                 case SchoolE.PrimarySchool:

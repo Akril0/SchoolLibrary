@@ -11,25 +11,14 @@ namespace SchoolLibrary
     {
         public static void Main(string[] args)
         {
-            //Створюємо студента
-            Student student1 = new Student(SchoolE.PrimarySchool);
-            //Виводимо список його книжок
-            Console.WriteLine("Студен номер 1");
-            Console.WriteLine("Список всiх книжок: ");
+            Book book = new Book("Укр Мова", BookType.Language);
+            book.DisplayInfo();
+            book.DisplayId();
+            MathBook mathBook = new MathBook("Матемактика", "Автор");
+            mathBook.DisplayInfo();
+            mathBook.DisplayAuthor();
+            mathBook.DisplayId();
 
-            //Виводимо список всіх його книжок
-            foreach (Book book in student1.GetBooksList())
-            {
-                book.DisplayInfo();
-            }
-            Console.WriteLine("\nСписок природ. книжок: ");
-
-            //Виводимо список його природничих книжок
-            foreach (Book book in student1.GetBooksList(BookType.Natural))
-            {
-                book.DisplayInfo();
-            }
-            Console.WriteLine("\n=========================================================\n");
         } 
     }
 }

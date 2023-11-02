@@ -15,8 +15,6 @@ namespace SchoolLibrary
         private SchoolE school;
         //поле список книжок
         private Dictionary<BookType, Book[]> books;
-        
-            
 
         //Конструктор
         public Student()

@@ -16,4 +16,10 @@ namespace SchoolLibrary
         //Старша Школа
         HighSchool,
     }
+    public enum BookType
+    {
+        Math,
+        Natural,
+        Language
+    }
 }
