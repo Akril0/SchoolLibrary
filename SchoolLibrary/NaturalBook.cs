@@ -42,7 +42,7 @@ namespace SchoolLibrary
             Console.WriteLine($"Книга з природничих наук за:{author}");
         }
 
-        public virtual void DisplayId()
+        public override void DisplayId()
         {
             Console.WriteLine($"Id: {Id}");
         }
