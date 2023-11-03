@@ -24,6 +24,8 @@ namespace SchoolLibrary
         protected Book(string title)
         {
             this.title = title;
+            Random rnd = new Random();
+            id = rnd.Next();
         }
 
         public int Id

@@ -38,7 +38,7 @@ namespace SchoolLibrary
         {
             Console.WriteLine($"Книга з математики за:{author}");
         }
-        public new void DisplayId()
+        public virtual void DisplayId()
         {
             Console.WriteLine($"Id: {Id}");
         }
